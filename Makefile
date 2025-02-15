@@ -7,7 +7,7 @@
 #
 ################################################################################
 # \copyright
-# Copyright 2018-2024, Cypress Semiconductor Corporation (an Infineon company)
+# Copyright 2018-2025, Cypress Semiconductor Corporation (an Infineon company)
 # SPDX-License-Identifier: Apache-2.0
 # 
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -108,6 +108,8 @@ ifndef NBT_PIN_IRQ
   ifneq ($(findstring CY8CPROTO-062S3-4343W, $(TARGET)),)
     NBT_PIN_IRQ=P5_6
   else ifneq ($(findstring CY8CPROTO-062S2-43439, $(TARGET)),)
+    NBT_PIN_IRQ=P6_2
+  else ifneq ($(findstring CY8CPROTO-062-4343W, $(TARGET)),)
     NBT_PIN_IRQ=P6_2
   else
     $(error NBT_PIN_IRQ not defined and no automatic mapping available for selected target.)
